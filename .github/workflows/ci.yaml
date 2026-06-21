@@ -12,7 +12,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
+        # Windows is omitted: `npm install` flakes on Windows when building the
+        # native `tree-sitter` node module (EPERM rmdir on node_modules cleanup).
+        # The grammar is validated on Linux/macOS here; Windows is still covered
+        # for the published artifact by the Python wheel build in release.yml.
+        os: [macos-latest, ubuntu-latest]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
