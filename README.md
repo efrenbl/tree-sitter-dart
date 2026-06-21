@@ -1,5 +1,10 @@
 # tree-sitter-dart
 
+[![PyPI](https://img.shields.io/pypi/v/tree-sitter-dart.svg)](https://pypi.org/project/tree-sitter-dart/)
+[![Python versions](https://img.shields.io/pypi/pyversions/tree-sitter-dart.svg)](https://pypi.org/project/tree-sitter-dart/)
+[![CI](https://github.com/efrenbl/tree-sitter-dart/actions/workflows/ci.yaml/badge.svg)](https://github.com/efrenbl/tree-sitter-dart/actions/workflows/ci.yaml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A [tree-sitter](https://tree-sitter.github.io/) grammar for the Dart programming
 language — which also covers **Flutter** (Flutter widgets are ordinary Dart
 classes; there is no separate Flutter syntax).
