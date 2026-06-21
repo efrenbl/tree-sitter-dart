@@ -21,3 +21,9 @@ doc
 .vscode
 target
 .build
+
+# Python build artifacts
+dist/
+*.egg-info/
+__pycache__/
+*.whl
