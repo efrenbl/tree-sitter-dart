@@ -1,0 +1,8 @@
+# Ensure the source distribution contains everything needed to compile the
+# extension from sdist (e.g. on platforms without a pre-built wheel). setuptools
+# auto-includes the ext_modules .c sources but NOT the headers in include_dirs,
+# so without this an `pip install` from sdist fails on a missing tree_sitter/*.h.
+recursive-include src *.c *.h
+recursive-include bindings *.c *.h
+recursive-include queries *.scm
+include grammar.js tree-sitter.json LICENSE README.md
