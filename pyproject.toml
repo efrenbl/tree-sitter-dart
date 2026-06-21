@@ -29,5 +29,8 @@ Issues = "https://github.com/efrenbl/tree-sitter-dart/issues"
 core = ["tree-sitter>=0.23"]
 
 [tool.cibuildwheel]
-build = "cp38-*"
+# Build a single abi3 wheel per platform. The extension is compiled with
+# Py_LIMITED_API (floor 3.8) and tagged cp38-abi3 by setup.py's BdistWheel, so
+# one build on a current interpreter yields a wheel compatible with 3.8+.
+build = "cp312-*"
 build-frontend = "build"
