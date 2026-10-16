@@ -25,17 +25,17 @@ jobs:
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
-      # QEMU lets the Linux runner also build aarch64 wheels.
+      # QEMU lets the Linux runner also build aarch64 and riscv64 wheels.
       - name: Set up QEMU
         if: runner.os == 'Linux'
         uses: docker/setup-qemu-action@c7c53464625b32c7a7e944ae62b3e17d2b600130 # v3
         with:
-          platforms: arm64
+          platforms: arm64,riscv64
 
       - name: Build wheels
         uses: pypa/cibuildwheel@294735312765b09d24a2fbec22660ce817587d55 # v4.1.0
         env:
-          CIBW_ARCHS_LINUX: "x86_64 aarch64"
+          CIBW_ARCHS_LINUX: "x86_64 aarch64 riscv64"
           CIBW_ARCHS_MACOS: "x86_64 arm64"
           CIBW_ARCHS_WINDOWS: "AMD64"
           # Smoke test every wheel: load the grammar through py-tree-sitter
